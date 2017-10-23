@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VRModalStatusView" customModule="VRModalStatus" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <visualEffectView opaque="NO" contentMode="scaleToFill" id="rLQ-hg-2UD">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g42-Ug-TJb">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8Y-RG-81m">
+                        <rect key="frame" x="55" y="10" width="130" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="gQo-tC-ymA"/>
+                            <constraint firstAttribute="height" constant="130" id="n3f-wF-WN0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC5-Ir-oSu">
+                        <rect key="frame" x="20" y="156" width="200" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wea-dG-AiX">
+                        <rect key="frame" x="20" y="185" width="200" height="45"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NC5-Ir-oSu" firstAttribute="top" secondItem="s8Y-RG-81m" secondAttribute="bottom" constant="16" id="JUj-CY-Dai"/>
+                    <constraint firstItem="wea-dG-AiX" firstAttribute="leading" secondItem="NC5-Ir-oSu" secondAttribute="leading" id="LBK-86-FKV"/>
+                    <constraint firstItem="wea-dG-AiX" firstAttribute="trailing" secondItem="NC5-Ir-oSu" secondAttribute="trailing" id="XKr-OT-sZ0"/>
+                    <constraint firstAttribute="trailing" secondItem="NC5-Ir-oSu" secondAttribute="trailing" constant="20" id="byZ-qv-LSk"/>
+                    <constraint firstAttribute="bottom" secondItem="wea-dG-AiX" secondAttribute="bottom" constant="10" id="gqv-W5-1dM"/>
+                    <constraint firstItem="s8Y-RG-81m" firstAttribute="top" secondItem="g42-Ug-TJb" secondAttribute="top" constant="10" id="gyZ-C7-fa6"/>
+                    <constraint firstItem="NC5-Ir-oSu" firstAttribute="leading" secondItem="g42-Ug-TJb" secondAttribute="leading" constant="20" id="jrK-jF-673"/>
+                    <constraint firstItem="s8Y-RG-81m" firstAttribute="centerX" secondItem="g42-Ug-TJb" secondAttribute="centerX" id="mTg-c5-6wQ"/>
+                    <constraint firstItem="wea-dG-AiX" firstAttribute="top" secondItem="NC5-Ir-oSu" secondAttribute="bottom" constant="5" id="yXF-pf-cUm"/>
+                </constraints>
+            </view>
+            <blurEffect style="light"/>
+            <point key="canvasLocation" x="4" y="-61"/>
+        </visualEffectView>
+    </objects>
+</document>
