@@ -63,20 +63,34 @@ public class VRModalStatusView: UIView {
     }
     
     public override func didMoveToSuperview() {
-        self.timer = Timer.scheduledTimer(
-            timeInterval: TimeInterval(3.0),
-            target: self,
-            selector: #selector(self.removeSelf),
-            userInfo: nil,
-            repeats: false)
+        
+        self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.contentView.alpha = 1.0
+            self.contentView.transform = CGAffineTransform.identity
+        })
+        { _ in
+            
+            self.timer = Timer.scheduledTimer(
+                timeInterval: TimeInterval(3.0),
+                target: self,
+                selector: #selector(self.removeSelf),
+                userInfo: nil,
+                repeats: false)
+        }
+        
     }
     
     @objc private func removeSelf()
     {
-        self.removeFromSuperview()
-        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.contentView.alpha = 0.0
+        }) { _ in
+            self.removeFromSuperview()
+        }
     }
-    
     
     public override func layoutSubviews() {
         self.layoutIfNeeded()
