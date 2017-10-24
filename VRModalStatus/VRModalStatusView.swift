@@ -17,6 +17,7 @@ public class VRModalStatusView: UIView {
 
     let nibName = "VRModalStatusView"
     var contentView:UIView!
+    var timer:Timer!
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
