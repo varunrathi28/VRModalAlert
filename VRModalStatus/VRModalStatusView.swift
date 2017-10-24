@@ -20,11 +20,14 @@ public class VRModalStatusView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        setUpView()
         
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+         setUpView()
+        
     }
     
     public func set(image:UIImage)
@@ -56,8 +59,32 @@ public class VRModalStatusView: UIView {
         lblHead.text = ""
         lblSubHead.text = ""
         
+    }
+    
+    public override func didMoveToSuperview() {
+        self.timer = Timer.scheduledTimer(
+            timeInterval: TimeInterval(3.0),
+            target: self,
+            selector: #selector(self.removeSelf),
+            userInfo: nil,
+            repeats: false)
+    }
+    
+    @objc private func removeSelf()
+    {
+        self.removeFromSuperview()
         
     }
+    
+    
+    public override func layoutSubviews() {
+        self.layoutIfNeeded()
+        self.contentView.layer.masksToBounds = true
+        self.contentView.clipsToBounds = true
+        self.contentView.layer.cornerRadius = 10
+        
+    }
+
     
     /*
     // Only override draw() if you perform custom drawing.
