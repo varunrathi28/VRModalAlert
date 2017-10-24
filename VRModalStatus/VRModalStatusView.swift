@@ -41,7 +41,7 @@ public class VRModalStatusView: UIView {
         self.lblHead.text = text
     }
     
-    func set(subHeading text:String)
+    public func set(subHeading text:String)
     {
         self.lblSubHead.text = text
     }
@@ -66,7 +66,7 @@ public class VRModalStatusView: UIView {
         
         self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.contentView.alpha = 1.0
             self.contentView.transform = CGAffineTransform.identity
         })
